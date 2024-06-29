@@ -23,7 +23,7 @@
 21.	 Pour le chatbot j’ai utilisé Groq : L'API Groq permet aux développeurs d'intégrer les capacités de calcul de Groq dans leurs applications. Cela inclut des fonctionnalités comme la génération de réponses de chat, l'analyse de texte, et plus encore. Pour utilise Groq il faut : 
 ✓	Visitez la plateforme Groq pour créer une clé API.
 ✓	Installer Groq avec la commande pip install groq
-✓	Configure Groq dans le projet
+✓	Configure Groq dans le projet 
 
 
                                   ➢ Utilisation de ChatGPT
