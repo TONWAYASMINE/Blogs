@@ -23,7 +23,15 @@
 21.	 Pour le chatbot j’ai utilisé Groq : L'API Groq permet aux développeurs d'intégrer les capacités de calcul de Groq dans leurs applications. Cela inclut des fonctionnalités comme la génération de réponses de chat, l'analyse de texte, et plus encore. Pour utilise Groq il faut : 
 ✓	Visitez la plateforme Groq pour créer une clé API.
 ✓	Installer Groq avec la commande pip install groq
-✓	Configure Groq dans le projet 
-➢	J’ai utilisé Chat GPT pour savoir comment traduire le text et quels sont les commandes à utilisées
-➢	Pour la conception de mon Blog j’ai passé 20H de temps sur trois jours vu que je suis débutante sur Django. Ça été une expérience vraiment enrichissante dans la mesure où c’est à partir de ce test que j’ai appris l’utilisation de Django, serte j’avais déjà entendu parler mais jamais utiliser. Du coup j’ai d’abord pris un temps pour apprendre à travers des vidéo YouTube.
+✓	Configure Groq dans le projet
+
+
+                        
+                                   ➢	Utilisation de ChatGPT
+J’ai utilisé Chat GPT pour savoir comment traduire le text et quels sont les commandes à utilisées
+
+                       
+                        
+                                    ➢  Temps mis sur la conception du Projet
+Pour la conception de mon Blog j’ai passé 20H de temps sur trois jours vu que je suis débutante sur Django. Ça été une expérience vraiment enrichissante dans la mesure où c’est à partir de ce test que j’ai appris l’utilisation de Django, serte j’avais déjà entendu parler mais jamais utiliser. Du coup j’ai d’abord pris un temps pour apprendre à travers des vidéo YouTube.
 
