@@ -1,4 +1,4 @@
-❖	       Documentation du Project
+                                          ❖  Documentation du Project
 
 1.	Créer un environnement virtuel ce qui permet de regrouper toutes les librairies qu’on a utilisé en un seul endroit  en tapant : python -m venv nom de environnement
 2.	Activer l’environnement virtuel en tapant: .\venv\scripts\activate sur Windows
