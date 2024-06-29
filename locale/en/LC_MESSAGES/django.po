@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-28 11:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\multilang_site\settings.py:135
+msgid "English"
+msgstr ""
+
+#: .\multilang_site\settings.py:136
+msgid "French"
+msgstr ""
+
+msgid "Change language"
+msgstr ""
+
+msgid "Tours & Travels"
+msgstr "Tours & Travels"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Archive"
+msgstr "Archive"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Pages"
+msgstr "Pages"
+
+msgid "Blog Details"
+msgstr "Blog Details"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "About Us"
+msgstr "About Us"
+
+msgid "Newsletter"
+msgstr "Newsletter"
+
+msgid "Stay update with our latest"
+msgstr "Stay update with our latest"
+
+msgid "Enter email"
+msgstr "Enter email"
+
+msgid "Subscribe"
+msgstr "Subscribe"
+
+msgid "Instagram Feed"
+msgstr "Instagram Feed"
+
+msgid "Follow Us"
+msgstr "Follow Us"
+
+msgid "Let us be social"
+msgstr "Let us be social"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "All rights reserved"
+msgstr "All rights reserved"
+
+msgid "This template is made with"
+msgstr "This template is made with"
+
+msgid "by"
+msgstr "by "

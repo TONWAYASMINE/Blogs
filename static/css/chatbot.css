@@ -1,0 +1,150 @@
+.show {
+    display: block; /* Afficher lorsque le bouton est cliqué */
+}
+
+.wrapper .title {
+    background: #007bff;
+    color: white;
+    line-height: 2.5;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+}
+
+.wrapper .box {
+    border: 1px solid #efefef;
+    padding: 10px 15px;
+    min-height: 400px;
+    max-height: 400px; /* Assurez-vous que le conteneur a une hauteur fixe */
+    overflow-y: auto;  /* Assurez-vous que le conteneur peut défiler */
+}
+
+.wrapper .box .item {
+    display: flex;
+    margin: 10px 0;
+    clear: both;
+}
+
+.wrapper .box .item .icon {
+    background: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.wrapper .box .item .msg {
+    background: #007bff;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+.wrapper .box .item.right .msg {
+    background: #efefef;
+    color: #333;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.wrapper .box .item.right {
+    justify-content: flex-end;
+}
+
+.wrapper .typing-area {
+    width: 100%;
+    background: #efefef;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.wrapper .typing-area .input-field {
+    width: 100%;
+    position: relative;
+}
+
+.wrapper .typing-area .input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline: none;
+    padding-right: 70px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s all ease;
+}
+
+.wrapper .typing-area .input-field input:focus {
+    border-color: #007bff;
+}
+
+.wrapper .typing-area .input-field button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 1px solid #007bff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #007bff;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s all ease;
+}
+
+.wrapper .typing-area .input-field button:hover {
+    background: #007bff;
+    color: white;
+}
+
+.wrapper .typing-area .input-field input:valid ~ button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+ .wrapper {
+            width: 370px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            transform: translateX(0%);
+            display: none; /* Masquer par défaut */
+            z-index: 1000; /* Assurez-vous que le chatbot est au-dessus du contenu */
+            background: aliceblue;
+        }
+
+        .show {
+            display: block; /* Afficher lorsque le bouton est cliqué */
+        }
+ .btn-chatbot{
+    background: blue;
+    border-radius: 15px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 2rem;
+
+ }

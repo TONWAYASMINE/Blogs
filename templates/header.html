@@ -1,0 +1,266 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog</title>
+	<link rel="icon" href="img/Fevicon.png" type="image/png">
+
+  <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendors/linericon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+  <script>
+    function changeLanguage() {
+        document.getElementById('languageForm').submit();
+    }
+  </script>
+</head>
+<body>
+  <!--================Header Menu  =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand logo_h" href="#" style="font-size: 2rem;font-weight: 900;">BLOG</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-center">
+                <li class="nav-item active"><a class="nav-link" href="index.html">{% trans "Home" %}</a></li> 
+                <li class="nav-item"><a class="nav-link" href="#">{% trans "Category" %}</a></li>
+                <li class="nav-item submenu dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">{% trans "Pages" %}</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" href="#">{% trans "Blog Details" %}</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">{% trans "Contact" %}</a></li>
+              <li class="nav-item">
+                <form id="languageForm" action="{% url 'set_language' %}" method="post" style="margin-top: 2rem;">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{ redirect_to }}" />
+                  <select name="language" onchange="changeLanguage()">
+                      {% get_current_language as LANGUAGE_CODE %}
+                      {% get_available_languages as LANGUAGES %}
+                      {% for lang in LANGUAGES %}
+                          <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                              {{ lang.1 }}
+                          </option>
+                      {% endfor %}
+                  </select>
+                </form>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right navbar-social">
+              <li><a href="#"><i class="ti-facebook"></i></a></li>
+              <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+              <li><a href="#"><i class="ti-instagram"></i></a></li>
+              <li><a href="#"><i class="ti-skype"></i></a></li>
+            </ul>
+          </div> 
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+
+    {% block content %}
+
+    {% endblock %}
+
+    <div class="wrapper" id="chatbot" >
+      <div class="title">Chatbot 
+        
+           <button onclick="toggleChatbot()"  type="button" class="close" aria-label="Close" style="color: white;font-size: 2rem;margin: 6px;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="box">
+          <div class="item">
+              <div class="icon" >
+                  <i class="fa fa-user"></i>
+              </div>
+              <div class="msg">
+                  <p>Bonjour!! comment allez-vous?</p>
+              </div>
+          </div>
+          <br clear="both">
+          <div class="item right">
+              <div class="msg">
+                <p id="response"></p>
+              </div>
+          </div>
+      </div>
+
+      <div class="typing-area">
+          <div class="input-field">
+              <input  type="text" id="message" placeholder="Type your message" required>
+              <button onclick="sendMessage()">Send</button>
+          </div>
+      </div>
+  </div>
+
+  <button onclick="toggleChatbot()" class="btn-chatbot">
+    <i class="ti-themify-favicon-alt" style="font-size: 3rem;"></i>
+  </button>
+  </main>
+
+  <!--================ Start Footer Area =================-->
+  <footer class="footer-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>{% trans "About Us" %}</h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
+              magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>{% trans "Newsletter" %}</h6>
+            <p>Stay update with our latest</p>
+            <div class="" id="mc_embed_signup">
+
+              <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                method="get" class="form-inline">
+
+                <div class="d-flex flex-row">
+
+                  <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+                    required="" type="email">
+
+
+                  <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
+                  <div style="position: absolute; left: -5000px;">
+                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                  </div>
+
+                  <!-- <div class="col-lg-4 col-md-4">
+                        <button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
+                      </div>  -->
+                </div>
+                <div class="info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget mail-chimp">
+            <h6 class="mb-20">{% trans "Instragram Feed" %}</h6>
+            <ul class="instafeed d-flex flex-wrap">
+              <li><img src="{% static 'assets/img/instagram/i1.jpg' %}" alt=""></li>
+              <li><img src="{% static 'assets/img/instagram/i2.jpg' %}" alt=""></li>
+              <li><img src="{% static 'assets/img/instagram/i3.jpg' %}" alt=""></li>
+              <li><img src="{% static 'assets/img/instagram/i4.jpg' %}" alt=""></li>
+              <li><img src="{% static 'assets/img/instagram/i5.jpg' %}" alt=""></li>
+              <li><img src="{% static 'assets/img/instagram/i6.jpg' %}" alt=""></li>
+              <li><img src="{% static 'assets/img/instagram/i7.jpg' %}" alt=""></li>
+              <li><img src="{% static 'assets/img/instagram/i8.jpg' %}" alt=""></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>{% trans "Follow Us" %}</h6>
+            <p>Let us be social</p>
+            <div class="footer-social d-flex align-items-center">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-dribbble"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-behance"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
+        <p class="footer-text m-0">
+           Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  
+           <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Yasmine</a>
+      </div>
+    </div>
+  </footer>
+  <!--================ End Footer  =================-->
+
+  <script src="{% static 'assets/vendors/jquery/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+  <script src="{% static 'assets/js/mail-script.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+    function toggleChatbot() {
+        var chatbot = document.getElementById('chatbot');
+        console.log(chatbot)
+        chatbot.classList.toggle('show'); 
+    }
+</script><script>
+  function toggleChatbot() {
+      var chatbot = document.getElementById('chatbot');
+      chatbot.classList.toggle('show'); 
+  }
+
+  async function sendMessage() {
+      const message = document.getElementById('message').value;
+      if (message.trim() === '') return; 
+
+  
+      const userMessageItem = document.createElement('div');
+      userMessageItem.classList.add('item');
+      userMessageItem.innerHTML = `<div class="icon"><i class="fa fa-user"></i></div><div class="msg"><p>${message}</p></div>`;
+      document.querySelector('.box').appendChild(userMessageItem);
+
+      document.getElementById('message').value = '';
+
+
+      const response = await fetch('chat/', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'X-CSRFToken': '{{ csrf_token }}'
+          },
+          body: new URLSearchParams({
+              'message': message
+          })
+      });
+
+      const data = await response.json();
+
+      const responseMessageItem = document.createElement('div');
+      responseMessageItem.classList.add('item', 'right');
+      responseMessageItem.innerHTML = `<div class="msg"><p>${data.response || data.error}</p></div>`;
+      document.querySelector('.box').appendChild(responseMessageItem);
+
+      document.querySelector('.box').scrollTop = document.querySelector('.box').scrollHeight;
+  }
+</script>
+</body>
+</html>
